@@ -1,0 +1,77 @@
+body {
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/102/018/original/beautiful-clouds.jpg?1698332725);
+  font-family: sans-serif;
+}
+
+.submit {
+  color: rgb(50, 50, 250);
+}
+h1 {
+  font-size: 200%;
+  font: bold;
+  font-family: "Roboto", sans-serif;
+  padding: 0 30px 0 200px;
+}
+
+.currentDate,
+.currentTime {
+  font-weight: lighter;
+  font-size: small;
+  font-style: italic;
+  padding: 0 0 0 200px;
+}
+.moon {
+  color: rgb(247, 247, 17);
+  display: block;
+  padding: 0 0 0 270px;
+  font-size: 300%;
+  line-height: 0;
+  word-spacing: 0%;
+}
+.sun {
+  color: rgb(247, 247, 17);
+  width: 700;
+  display: block;
+}
+.cloud {
+  color: whitesmoke;
+  width: 700;
+  display: block;
+}
+.current-temperature {
+  font-size: 200%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 0 0 0 200px;
+}
+.container {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: block;
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 20px;
+  border: solid 2px white;
+  border-radius: 20px;
+  background-color: rgb(47, 103, 185);
+}
+.condition {
+  margin: 20px auto;
+  padding: 20px;
+  border: solid 2px white;
+  border-radius: 30px;
+  max-width: 200%;
+  display: block;
+  background-color: rgb(12, 202, 240);
+}
+.air-conditions {
+  text-align: left;
+  text-decoration: underline;
+  font-weight: bold;
+  font: bold;
+}
+footer {
+  text-align: right;
+  padding: 20px 70px 40px 0;
+  font: bold;
+  font-size: large;
+  font-weight: bold;
+}

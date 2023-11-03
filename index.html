@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather-app Project</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googlepis.com/css2?family=Train+One&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3761523ebd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="search-form">
+        <input
+          type="searchs"
+          placeholder="🔍Change City..."
+          class="form-control"
+          id="search"
+        />
+        <input type="submit" value="search" class="search-button" />
+      </form>
+      <br />
+      <div class="button">
+        <button type="button" class="btn btn-info">Current Location</button>
+      </div>
+      <div>
+        <h1>
+          Bulawayo
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+          />
+        </h1>
+        
+        <br />
+        <div class="current-temperature" id="currentTemperature">
+          28°C </div>
+          <div class="moon" id="currentMoon">
+            <i class="fa-solid fa-circle moon"></i>
+        </div>
+        <br />
+        <div class="dateTime">
+          <div class="currentDate" id="current-date">
+            October, 31 Tuesday, 2023
+          </div>
+          <div class="currentTime" id="current-time">12:00</div>
+          <div class="condition">
+            <div class="air-conditions">Air Conditions</div>
+            <br />
+            <div class="row">
+              <div class="col">
+                Real Feel
+                <p>27°C</p>
+              </div>
+              <div class="col">
+                Wind
+                <p>13km/hr</p>
+              </div>
+              <div class="row">
+                <div class="col">
+                  Chances of rain
+                  <p>0%</p>
+                </div>
+                <div class="col">
+                  UV Index
+                  <p>3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="header">
+            <em>5-DAY FORECAST</em>
+          </div>
+          <div class="forecast">
+            <div class="row">
+              <div class="col-2">
+                <div class="day">Saturday</div>
+                <i class="fa-solid fa-sun sun"></i>
+                <div class="temperature">
+                  <span class="maximum">36°</span>
+                  |
+                  <span class="minimum">21°</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="day">Sunday</div>
+                <i class="fa-solid fa-sun sun"></i>
+                <div class="temperature">
+                  <span class="maximum">37°</span>
+                  |
+                  <span class="minimum">21°</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="day">Monday</div>
+                <i class="fa-solid fa-cloud cloud"></i>
+                <div class="temperature">
+                  <span class="maximum">30°</span>
+                  |
+                  <span class="minimum">13°</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="day">Tuesday</div>
+                <i class="fa-solid fa-cloud cloud"></i>
+                <div class="temperature">
+                  <span class="maximum">20°</span>
+                  |
+                  <span class="minimum">13°</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="day">Wednesday</div>
+                <i class="fa-solid fa-sun sun"></i>
+                <div class="temperature">
+                  <span class="maximum">33°</span>
+                  |
+                  <span class="minimum">18°</span>
+                </div>
+              </div>
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      This project is coded by
+      <a
+        href="https://zw.linkedin.com/emmah-zanele-mpofu-a3b649254"
+        target="_blank"
+        rel="noreferrer"
+        >Emmah Zanele Mpofu</a
+      >
+      and is
+      <a href="#" target="_blank"> on GitHub</a> and
+      <a href="#" target="_blank">hosted on Netlify</a>
+    </footer>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
