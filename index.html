@@ -34,6 +34,7 @@
           placeholder="🔍Change City..."
           class="form-control"
           id="search"
+          required
         />
         <input type="submit" value="search" class="search-button" />
       </form>
@@ -42,8 +43,7 @@
         <button type="button" class="btn btn-info">Current Location</button>
       </div>
       <div>
-        <h1>
-          Bulawayo
+        <h1 class="current-city" id="city">Bulawayo</h1>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
           <link
@@ -51,13 +51,11 @@
             rel="stylesheet"
           />
         </h1>
-        
         <br />
         <div class="current-temperature" id="currentTemperature">
           28°C </div>
-          <div class="moon" id="currentMoon">
-            <i class="fa-solid fa-circle moon"></i>
-        </div>
+          <div class="icon"  id="currentIcon"></div>
+            <span id="description"></span>
         <br />
         <div class="dateTime">
           <div class="currentDate" id="current-date">
@@ -70,20 +68,20 @@
             <div class="row">
               <div class="col">
                 Real Feel
-                <p>27°C</p>
+                <p id="realFeel">27°C</p>
               </div>
               <div class="col">
-                Wind
-                <p>13km/hr</p>
+                Wind Speed
+                <p id="windSpeed">13km/hr</p>
               </div>
               <div class="row">
                 <div class="col">
-                  Chances of rain
-                  <p>0%</p>
+                  Wind Degree
+                  <p id="windDegree">0%</p>
                 </div>
-                <div class="col">
-                  UV Index
-                  <p>3</p>
+                <div class="col"> 
+                  Humidity
+                  <p id="humidity">0</p>
                 </div>
               </div>
             </div>
@@ -145,17 +143,15 @@
         </div>
       </div>
     </div>
-    <footer class="name">
-      This project is coded by
+    <footer>
       <a
-        href="https://github.com/Zaemah"
+        href="https://github.com/Zaemah/weather.app"
         target="_blank"
         rel="noreferrer"
-        >Emmah Zanele Mpofu</a
+        >open source code by</a
       >
-      and is
-      <a href="https://github.com/Zaemah/weather.app" target="_blank"> on GitHub</a> and
-      <a href="https://wonderful-tiramisu-e8fd57.netlify.app/" target="_blank">hosted on Netlify</a>
+      <a href="https://github.com/Zaemah" target="_blank"> Emmah Zanele Mpofu</a> hosted
+      <a href="https://wonderful-tiramisu-e8fd57.netlify.app" target="_blank">on Netlify</a>
     </footer>
 
     <script src="src/index.js"></script>
