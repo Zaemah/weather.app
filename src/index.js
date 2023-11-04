@@ -5,7 +5,8 @@ function formatDate(date) {
     "Tuesday",
     "Wednesday",
     "Thursday",
-    "Friday"
+    "Friday",
+    "Saturday"
   ];
   let months = [
     "January",
@@ -49,25 +50,50 @@ let currentTime = new Date();
 currentDay.innerHTML = formatDate(currentTime);
 currentHour.innerHTML = formatHour(currentTime);
 
+function searchCity(city){
+  let apiKey = "9f643d37e7b4384t68a91494fb6ocd10";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+
+  axios.get(apiUrl).then(displayTemperature);
+  
+}
+
+
 function showCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search");
-
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${cityInput.value}`;
-
-  function displayTemperature(response) {
-    let temperatureElement = document.querySelector("#currentTemperature");
-    let temperature = Math.round(response.data.temperature.current);
-
-    temperatureElement.innerHTML = `${temperature}°C`;
-  }
-
-  let apiKey = "9f643d37e7b4384t68a91494fb6ocd10";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityInput.value}&key=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayTemperature);
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = cityInput.value;
+  searchCity(cityInput.value);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", showCity);
+  function displayTemperature(response) {
+    let cityElement= document.querySelector('#city');
+    let temperatureElement = document.querySelector("#currentTemperature");
+    let temperature = Math.round(response.data.temperature.current);
+    let descriptionElement=document.querySelector("#description");
+    let humidityElement=document.querySelector("#humidity");
+    let feelElement=document.querySelector("#realFeel");
+    let feel= Math.round(response.data.temperature.feels_like);
+    let speedElement=document.querySelector("#windSpeed");
+    let speed=Math.round(response.data.wind.speed);
+    let degreeElement=document.querySelector("#windDegree");
+    let iconElement=document.querySelector("#currentIcon");
+
+
+    cityElement.innerHTML= response.data.city;
+    temperatureElement.innerHTML =`${temperature}°C`;
+    descriptionElement.innerHTML= response.data.condition.description;
+    humidityElement.innerHTML= `${response.data.temperature.humidity}%`;
+    feelElement.innerHTML=`${feel}°C`;
+    speedElement.innerHTML=`${speed}km/hr`;
+    degreeElement.innerHTML=`${response.data.wind.degree}°`;
+    iconElement.innerHTML=`<img src="${response.data.condition.icon_url}"class="weather-icon">`;
+  }
+
+  
+  
+  let form = document.querySelector("#search-form");
+  form.addEventListener("submit", showCity);
+
+  searchCity("Bulawayo");
