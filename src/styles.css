@@ -3,10 +3,15 @@ body {
   font-family: sans-serif;
 }
 
+#search-form{
+  border: none;
+  border-radius: 16px;
+  padding: 20px;
+}
 .submit {
   color: rgb(50, 50, 250);
 }
-h1 {
+.current-city {
   font-size: 200%;
   font: bold;
   font-family: "Roboto", sans-serif;
@@ -20,12 +25,19 @@ h1 {
   font-style: italic;
   padding: 0 0 0 200px;
 }
-.moon {
-  color: rgb(247, 247, 17);
+.icon {
   display: block;
   padding: 0 0 0 270px;
   font-size: 300%;
   line-height: 0;
+  word-spacing: 0%;
+  width: 1500;
+}
+#description{
+  color: black;
+  font-size: medium;
+  padding: 0 0 0 310px;
+  line-height: 0%;
   word-spacing: 0%;
 }
 .sun {
