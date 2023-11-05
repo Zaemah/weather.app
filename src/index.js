@@ -1,13 +1,17 @@
 function formatDate(date) {
-  let weekDays = [
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let days = [
     "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
+  let now= date.getDate();
+  let day = days[date.getDay()];
   let months = [
     "January",
     "February",
@@ -20,35 +24,63 @@ function formatDate(date) {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
-  let dayName = weekDays[date.getDay()];
   let month = months[date.getMonth()];
-  let year = date.getFullYear();
-  let day = date.getDate();
 
-  return `${month}, ${day} ${dayName}, ${year}`;
-}
-
-function formatHour(hour) {
-  let hours = hour.getHours();
-  let minutes = hour.getMinutes();
-
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
   if (minutes < 10) {
-    minutes = `${minutes}`;
+    minutes = `0${minutes}`;
   }
-  return `${hours}:${minutes}`;
+
+  return `${day} ${now} ${month}, ${hours}:${minutes}`;
 }
-let currentDay = document.querySelector("#current-date");
-let currentHour = document.querySelector("#current-time");
 
-let currentTime = new Date();
+function getForecast(city){
+  let apiKey="9f643d37e7b4384t68a91494fb6ocd10";
+  let apiUrl= `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`; 
 
-currentDay.innerHTML = formatDate(currentTime);
-currentHour.innerHTML = formatHour(currentTime);
+  
+  axios.get(apiUrl).then(displayForecast);
+ }
+
+   function formatDay(focastTime){
+    let date= new Date(focastTime * 1000);
+    let days=["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+
+    return days[date.getDay()];
+   }
+
+  function displayForecast(response){
+    console.log(response.data);
+ 
+  
+  let forecastHtml="";
+
+  response.data.daily.forEach(function(day,index){
+    if(index<6){
+    forecastHtml=
+    forecastHtml +
+
+  `<div class="weather-forecast-day">
+  <div class="weather-forecast-date">${formatDay(day.time)}</div>
+  <img src ="${day.condition.icon_url}" class="weather-forecast-icon"/>
+  <div class="weather-forecast-temperatures">
+    <div class="weather-forecast-temperature">
+      <strong>${Math.round(day.temperature.maximum)}°</strong>
+    </div>
+    <div class="weather-forecast-temperature">${Math.round(day.temperature.minimum)}°</div>
+  </div>
+</div>
+`;
+    }
+ });
+
+  let forecastElement = document.querySelector("#daily-forecast");
+      forecastElement.innerHTML = forecastHtml;
+
+ }
+ 
+ 
 
 function searchCity(city){
   let apiKey = "9f643d37e7b4384t68a91494fb6ocd10";
@@ -57,6 +89,7 @@ function searchCity(city){
   axios.get(apiUrl).then(displayTemperature);
   
 }
+
 
 
 function showCity(event) {
@@ -79,6 +112,8 @@ function showCity(event) {
     let speed=Math.round(response.data.wind.speed);
     let degreeElement=document.querySelector("#windDegree");
     let iconElement=document.querySelector("#currentIcon");
+    let timeElement = document.querySelector("#date");
+    let date = new Date(response.data.time * 1000);
 
 
     cityElement.innerHTML= response.data.city;
@@ -89,11 +124,17 @@ function showCity(event) {
     speedElement.innerHTML=`${speed}km/hr`;
     degreeElement.innerHTML=`${response.data.wind.degree}°`;
     iconElement.innerHTML=`<img src="${response.data.condition.icon_url}"class="weather-icon">`;
+    timeElement.innerHTML = formatDate(date);
+  
+    getForecast(response.data.city);
+  
   }
 
+    
   
-  
+
   let form = document.querySelector("#search-form");
   form.addEventListener("submit", showCity);
 
   searchCity("Bulawayo");
+  
