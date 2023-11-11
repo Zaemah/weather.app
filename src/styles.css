@@ -46,8 +46,8 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
   display: block;
   margin: 60px auto;
-  width: 600px;
-height: 400px;
+ width: 100%;
+height: auto;
   padding: 60px;
   border: solid 2px white;
   border-radius: 20px;
