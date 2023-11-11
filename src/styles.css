@@ -118,9 +118,9 @@ height: auto;
 }
 .current-city{
 text-align:left;
+padding: 30px;
 }
 .temperature-container{
-display: block;
 text-align: left;
 padding: 20px;
 }
