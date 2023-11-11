@@ -116,7 +116,12 @@ footer {
 width: 100%;
 height: auto;
 }
-.current-city,.temperature-container{
+.current-city{
+text-align:right;
+}
+.temperature-container{
+display: block;
 text-align: right;
 padding: 20px;
+}
 }
