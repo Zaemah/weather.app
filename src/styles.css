@@ -117,11 +117,14 @@ width: 100%;
 height: auto;
 }
 .current-city{
-text-align:right;
+text-align:left;
 }
 .temperature-container{
 display: block;
-text-align: right;
+text-align: left;
 padding: 20px;
+}
+.date{
+text-align: left;
 }
 }
