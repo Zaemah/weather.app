@@ -110,3 +110,9 @@ footer {
   font-size: large;
   font-weight: bold;
 }
+@media(max-width){
+.container {
+width: 100%;
+height: auto;
+}
+}
