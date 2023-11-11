@@ -75,7 +75,7 @@ height: auto;
 
 .dailyForecast {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 30px;
 }
 
