@@ -127,4 +127,11 @@ padding: 20px;
 .date{
 text-align: left;
 }
+.icon{
+width: 100%;
+height : auto;
+}
+.current-temperature{
+padding:20px;
+}
 }
