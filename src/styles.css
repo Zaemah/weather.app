@@ -77,7 +77,6 @@ height: auto;
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
-overfow-x: auto;
 }
 
 .weather-forecast-date {
