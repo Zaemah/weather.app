@@ -145,7 +145,7 @@ width: 100%;
 height: auto;
 }
 .dailyForecast{
-display: block;
+flex-wrap: wrap;
 }
 
 }
