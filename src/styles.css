@@ -3,13 +3,21 @@ body {
   font-family: sans-serif;
 }
 
-#search-form{
+form {
+  display: flex;
+}
+
+#search-form {
   border: none;
   border-radius: 16px;
   padding: 20px;
+  width: 90%;
 }
-.submit {
+.search-button {
   color: rgb(50, 50, 250);
+  border: 1px solid blue;
+  border-radius: 30px;
+  width: 30%;
 }
 .current-city {
   font-size: 200%;
